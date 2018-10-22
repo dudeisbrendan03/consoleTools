@@ -60,8 +60,6 @@ class consoleDisplay(object):
             print("\nMissing dependancy\n")
             raise missingContent
         from datetime import datetime
-        import os
-        print(os.path.dirname(os.path.realpath(__file__)))
         colorama.init()
         
         type=""
