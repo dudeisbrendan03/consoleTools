@@ -94,7 +94,7 @@ class consoleDisplay(object):
                 cp("consoleTools ERROR ","white",'on_red',attrs=['bold','blink'],end=""); cp("Issue writing to log file - file exists. Is the file open in the background/by another process (won't be able to write if so)","red",'on_white',attrs=['bold'],end="\n")
     @staticmethod
     def clear():
-        import os; s=os.name()#grab OS name, store it in 's'
+        import os; s=os.name#grab OS name, store it in 's'
         if s == 'posix':#check if we're on posix/unix
             c='clear'#set clear command
         elif s == 'nt':#check if we're on an NT based system
@@ -104,7 +104,7 @@ class consoleDisplay(object):
     def printFile(self,file=""):
         if file=="":
             raise incorrectUsage
-        import os; s=os.name()#grab OS name, store it in 's'
+        import os; s=os.name#grab OS name, store it in 's'
         if s == 'posix':#check if we're on posix/unix
             c='cat'#set clear command
         elif s == 'nt':#check if we're on an NT based system
