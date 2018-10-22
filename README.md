@@ -1,9 +1,12 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
-consoleTools: v0.1.3 (non-stable)
+consoleTools: v0.1.4 (non-stable)
+
 Packaged: No
+
 OS Support: OS Independant
+
 ___________________
 ## What am I?
 We needed a logging tool and console display tool with a fancy output with colours, so we quickly whipped this together.
@@ -45,9 +48,13 @@ ___________________
 ### Stable
 Console tools is easy to install via pip:
 `pip install Console-Tools`
-### Beta
+### Nightly
 Grab this version (may not function at all/function correctly)
 `git clone https://github.com/dudeisbrendan03/consoleTools.git`
 `pip install -r requirements.txt`
 (Optional) - Access the module globally:
 Move the `consoleTools` folder to `Python37\Lib\site-packages`
+
+### Beta
+We upload a beta (partially stable) version to PyPI test.
+`python -m pip install --index-url https://test.pypi.org/simple/ Console-Tools`
