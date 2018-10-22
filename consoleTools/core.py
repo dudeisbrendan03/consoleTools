@@ -46,7 +46,7 @@ class consoleDisplay(object):
             f.close()
         
     from datetime import datetime
-    fnameSet="logs/"+str(datetime.now().strftime('%Y-%m-%d'))+"-log.txt"
+    fnameSet="./logs/"+str(datetime.now().strftime('%Y-%m-%d'))+"-log.txt"
 
     @staticmethod
     def log(mode="None",out="",noLog=False,file=fnameSet):
@@ -90,7 +90,7 @@ class consoleDisplay(object):
                 cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - does not exist. Are you running from an IDE? (doesn't always work in an IDE)","red",'on_white',attrs=['italic','bold'],end="\n")
             except FileExistsError:
                 cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - file exists. Is the file open in the background/by another process (won't be able to write if so)","red",'on_white',attrs=['italic','bold'],end="\n")
-
+                cp("Try specifying a log file when using the log tool if you are not running the script from the same directory as it is located.","red",'on_white',attrs=['italic','bold'],end="\n")
     @staticmethod
     def clear():
         import os; s=os.name()#grab OS name, store it in 's'
