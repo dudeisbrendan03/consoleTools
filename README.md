@@ -1,7 +1,7 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
-consoleTools: v0.1.5 (non-stable)
+consoleTools: v0.1.6 (non-stable)
 
 Packaged: No
 
@@ -10,7 +10,7 @@ OS Support: OS Independant
 ___________________
 ## What am I?
 We needed a logging tool and console display tool with a fancy output with colours, so we quickly whipped this together.
-Other features will be implemented to this over-time as we need more things in our console apps.
+Other features will be implemented to this over-time as we need more things in our console apps (main feature is logging).
 
 All logs are stored in `logs/`date`-log.txt`
 ___________________
@@ -24,6 +24,10 @@ cd.log('i','I am an information message')
 cd.log('n',"I am a notice and therefore have no formatting as I'm not that important")
 cd.log('s','Woo-hoo! Your thing worked')
 ```
+
+Other non-major items:
+cd.clear() - clear console
+cd.printFile() - print file contents
 ___________________
 ## Questions people asked when making this (but not in their words)
 q) B... b... but I don't want it to log to a file Brendan!
