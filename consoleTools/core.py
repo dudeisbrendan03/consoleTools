@@ -101,7 +101,8 @@ class consoleDisplay(object):
             c='cls'#set clear command
         os.system(c)#run clear command
 
-    def printFile(self,file=""):
+    @staticmethod
+    def printFile(file=""):
         if file=="":
             raise incorrectUsage
         import os; s=os.name#grab OS name, store it in 's'
