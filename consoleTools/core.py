@@ -101,3 +101,12 @@ class consoleDisplay(object):
             c='cls'#set clear command
         os.system(c)#run clear command
 
+    def printFile(self,file=""):
+        if file=="":
+            raise incorrectUsage
+        import os; s=os.name()#grab OS name, store it in 's'
+        if s == 'posix':#check if we're on posix/unix
+            c='cat'#set clear command
+        elif s == 'nt':#check if we're on an NT based system
+            c='type'#set clear command
+        os.system(c+" "+file)
