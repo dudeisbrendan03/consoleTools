@@ -1,7 +1,7 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
-##What am I?
+## What am I?
 We needed a logging tool and console display tool with a fancy output with colours, so we quickly whipped this together.
 Other features will be implemented to this over-time as we need more things in our console apps.
 

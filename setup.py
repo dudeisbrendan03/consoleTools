@@ -8,7 +8,7 @@ setuptools.setup(
     name="Console Tools",
 
     # Version number (initial):
-    version="0.1.0",
+    version="0.1.3",
 
     # Application author details:
     author="Brendan T D. Jennings",
@@ -21,11 +21,13 @@ setuptools.setup(
     include_package_data=True,
 
     # Details
-    url="http://pypi.python.org/pypi/MyApplication_v010/",
+    url="https://github.com/dudeisbrendan03/consoleTools",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
 
     #
-    # license="LICENSE.txt",
-    description="Useful towel-related stuff.",
+    license="LICENSE",
+    description="A fancy text and logging tool for console applications",
 
     # long_description=open("README.txt").read(),
 
@@ -37,7 +39,7 @@ setuptools.setup(
 
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: OS Independent",
     ],
 )
