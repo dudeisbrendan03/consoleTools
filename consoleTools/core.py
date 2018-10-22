@@ -36,15 +36,14 @@ class consoleDisplay(object):
         date=str(datetime.now().strftime('%Y-%m-%d'))
         #create files before use
         import os.path as p
-        if p.exists('logs/') == False:
+        if p.exists('./logs/') == False:
             try:
-                import os;os.mkdir('logs')
+                import os;os.mkdir('./logs/')
             except OSError:
                 raise scriptFailureIOOP
-        if p.exists('logs/{}-log.txt'.format(date)) == False:
-            f=open('logs/{}-log.txt'.format(date),'w+')
+        if p.exists('./logs/{}-log.txt'.format(date)) == False:
+            f=open('./logs/{}-log.txt'.format(date),'w+')
             f.close()
-        fname="{}-log.txt".format(date)
         
     from datetime import datetime
     fnameSet="logs/"+str(datetime.now().strftime('%Y-%m-%d'))+"-log.txt"
@@ -83,9 +82,14 @@ class consoleDisplay(object):
             type = "SUCCESS"
             if out != "":   print("{}: {}".format(col(type,"green",attrs=['bold']),out)) # this shows up in the interactive prompt
         if noLog == False:
-            f = open(file, 'a') #prints now go the the file
-            f.write("\n{} - {}: {}".format(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')),type,out))   # nothing appears. it's written to log file instead
-            f.close
+            try:
+                f = open(file, 'a') #prints now go the the file
+                f.write("\n{} - {}: {}".format(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')),type,out))   # nothing appears. it's written to log file instead
+                f.close
+            except FileNotFoundError:
+                cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - does not exist. Are you running from an IDE? (doesn't always work in an IDE)","red",'on_white',attrs=['italic','bold'],end="\n")
+            except FileExistsError:
+                cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - file exists. Is the file open in the background/by another process (won't be able to write if so)","red",'on_white',attrs=['italic','bold'],end="\n")
 
     @staticmethod
     def clear():

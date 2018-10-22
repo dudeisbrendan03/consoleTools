@@ -1,6 +1,10 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
+consoleTools: v0.1.3 (non-stable)
+Packaged: No
+OS Support: OS Independant
+___________________
 ## What am I?
 We needed a logging tool and console display tool with a fancy output with colours, so we quickly whipped this together.
 Other features will be implemented to this over-time as we need more things in our console apps.
@@ -30,4 +34,20 @@ Add the boolean flag `False` and nothing will be logged to a file
 q) I don't want to log to `logs/`. Why are you making me do this
 a) By adding the simple flag `file=x` you can set whatever you want there
 ```python
-cd.log('s','I will log to a custom file',file="thisfilecontainsthe.log")```
+cd.log('s','I will log to a custom file',file="thisfilecontainsthe.log")
+```
+
+q) I know what happened, but when?
+a) The log files contain dates and times - just keeping the console nice and clean
+___________________
+## Getting Console Tools
+
+### Stable
+Console tools is easy to install via pip:
+`pip install Console-Tools`
+### Beta
+Grab this version (may not function at all/function correctly)
+`git clone https://github.com/dudeisbrendan03/consoleTools.git`
+`pip install -r requirements.txt`
+(Optional) - Access the module globally:
+Move the `consoleTools` folder to `Python37\Lib\site-packages`
