@@ -31,11 +31,13 @@ class consoleDisplay(object):
 
     clear - identify operating system and clear the console accordingly
     """
+    
     def __init__(self):
         from datetime import datetime #Date now command
         date=str(datetime.now().strftime('%Y-%m-%d'))
         #create files before use
         import os.path as p
+        from os import getcwd
         if p.exists('./logs/') == False:
             try:
                 import os;os.mkdir('./logs/')
@@ -58,7 +60,8 @@ class consoleDisplay(object):
             print("\nMissing dependancy\n")
             raise missingContent
         from datetime import datetime
-
+        import os
+        print(os.path.dirname(os.path.realpath(__file__)))
         colorama.init()
         
         type=""
@@ -87,10 +90,10 @@ class consoleDisplay(object):
                 f.write("\n{} - {}: {}".format(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')),type,out))   # nothing appears. it's written to log file instead
                 f.close
             except FileNotFoundError:
-                cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - does not exist. Are you running from an IDE? (doesn't always work in an IDE)","red",'on_white',attrs=['italic','bold'],end="\n")
+                cp("consoleTools ERROR ","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - does not exist. Are you running from an IDE? (doesn't always work in an IDE)","red",'on_white',attrs=['bold'],end="\n")
+                cp("Try specifying a log file when using the log tool if you are not running the script from the same directory as it is located.","red",'on_white',attrs=['bold'],end="\n")
             except FileExistsError:
-                cp("consoleTools ERROR","white",'on_red',attrs=['bold'],end=""); cp("Issue writing to log file - file exists. Is the file open in the background/by another process (won't be able to write if so)","red",'on_white',attrs=['italic','bold'],end="\n")
-                cp("Try specifying a log file when using the log tool if you are not running the script from the same directory as it is located.","red",'on_white',attrs=['italic','bold'],end="\n")
+                cp("consoleTools ERROR ","white",'on_red',attrs=['bold','blink'],end=""); cp("Issue writing to log file - file exists. Is the file open in the background/by another process (won't be able to write if so)","red",'on_white',attrs=['bold'],end="\n")
     @staticmethod
     def clear():
         import os; s=os.name()#grab OS name, store it in 's'
