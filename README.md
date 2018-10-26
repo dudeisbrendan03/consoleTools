@@ -1,7 +1,7 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
-consoleTools: v0.1.8 (non-stable)
+consoleTools: v0.1.9 (non-stable)
 
 Packaged: Yes
 
@@ -20,7 +20,7 @@ ___________________
 from consoleTools import consoleDisplay as cd
 cd.log('e','I am an error')
 cd.log('w','I am a warning')
-cd.log('i','I am an information message')
+cd.log('i','I am an informational message')
 cd.log('n',"I am a notice and therefore have no formatting as I'm not that important")
 cd.log('s','Woo-hoo! Your thing worked')
 ```
@@ -34,7 +34,7 @@ q) B... b... but I don't want it to log to a file Brendan!
 
 a) Well the #### you, we added that:
 ```python
-cd.log('s','I will not log to a file',False)
+cd.log('s','I will not log to a file',True)
 ```
 Add the boolean flag `False` and nothing will be logged to a file
 
