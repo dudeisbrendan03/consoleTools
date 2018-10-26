@@ -82,7 +82,7 @@ class consoleDisplay(object):
         elif mode == 's':
             type = "SUCCESS"
             if out != "":   print("{}: {}".format(col(type,"green",attrs=['bold']),out)) # this shows up in the interactive prompt
-        if noLog == True:
+        if noLog == False:
             try:
                 f = open(file, 'a') #prints now go the the file
                 f.write("\n{} - {}: {}".format(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')),type,out))   # nothing appears. it's written to log file instead
