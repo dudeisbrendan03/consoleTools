@@ -87,6 +87,9 @@ class consoleDisplay(object):
         elif mode == 's':
             type = "SUCCESS"
             if out != "":   print("{}: {}".format(col(type,"green",attrs=['bold']),out)) # this shows up in the interactive prompt
+        elif mode == 'z':
+            type = "SPAM"
+            if noLog == True:   raise incorrectUsage
         if noLog == False:
             try:
                 f = open(file, 'a') #prints now go the the file
