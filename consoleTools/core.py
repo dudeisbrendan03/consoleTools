@@ -10,15 +10,20 @@ class generalError(Exception):
 class missingContent(Exception):
     """You are missing a dependancy required by the script"""
 
-#class bcolors: REDUNDANT - DOESNT WORK ON WINDOWS BY DEFAULT
-#    HEADER = '\033[95m'
-#    OKBLUE = '\033[94m'
-#    OKGREEN = '\033[92m'
-#    WARNING = '\033[93m'
-#    FAIL = '\033[91m'
-#    ENDC = '\033[0m'
-#    BOLD = '\033[1m'
-#    UNDERLINE = '\033[4m'
+class fileTools(object):
+    def __init(self):
+        import os
+        
+    @staticmethod
+    def universemove(file,destination):
+        if file=="":
+            raise incorrectUsage
+        import os; s=os.name#grab OS name, store it in 's'
+        if s == 'posix':#check if we're on posix/unix
+            c='mv'#set clear command
+        elif s == 'nt':#check if we're on an NT based system
+            c='move'#set clear command
+        os.system('{} {} {}'.format(c,file,destination))
 
 class consoleDisplay(object):
     from datetime import datetime as datenow #Date now command
@@ -110,4 +115,5 @@ class consoleDisplay(object):
             c='cat'#set clear command
         elif s == 'nt':#check if we're on an NT based system
             c='type'#set clear command
+
         os.system(c+" "+file)

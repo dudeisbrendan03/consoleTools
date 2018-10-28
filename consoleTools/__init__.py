@@ -13,5 +13,6 @@ from .core import incorrectUsage
 
 #Classes
 from .core import consoleDisplay
+from .core import fileTools
 
 #Basic functions
