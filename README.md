@@ -1,7 +1,7 @@
 # consoleTools
 A python module made for server applications for formatting and logging
 ___________________
-consoleTools: v0.2.0 (stable*ish*)
+consoleTools: v0.2.1 (stable*ish* - no update since 0.2.0, just a repackage)
 
 Packaged: Yes
 
