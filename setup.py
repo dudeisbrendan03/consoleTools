@@ -8,7 +8,7 @@ setuptools.setup(
     name="Console Tools",
 
     # Version number (initial):
-    version="0.2.0",
+    version="0.2.1",
 
     # Application author details:
     author="Brendan T D. Jennings",
